@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AccessHome</title>
+
+<style>
+
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+    overflow-x:hidden;
+    color:#111827;
+}
+
+/* 🌈 DÉGRADÉ ANIMÉ */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:linear-gradient(
+        120deg,
+        #60A5FA,
+        #93C5FD,
+        #BFDBFE,
+        #EAF4FF,
+        #60A5FA
+    );
+
+    background-size:400% 400%;
+    animation:gradientMove 10s ease infinite;
+
+    z-index:-1;
+}
+
+@keyframes gradientMove{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* HEADER */
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:80px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 40px;
+
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(10px);
+
+    border-bottom:1px solid rgba(0,0,0,0.08);
+    z-index:1000;
+}
+
+/* LOGO */
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:800;
+}
+
+.logo img{
+    width:45px;
+    height:45px;
+    border-radius:12px;
+    object-fit:cover;
+}
+
+/* NAV */
+nav a{
+    margin-left:20px;
+    text-decoration:none;
+    color:#111827;
+    font-weight:600;
+}
+
+/* SECTION */
+section{
+    padding:70px 10%;
+    text-align:center;
+}
+/* HERO BUBBLE */
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.hero-card{
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(15px);
+
+    padding:60px 40px;
+    border-radius:30px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,0.15);
+}
+
+.hero-logo{
+    width:180px;
+    height:180px;
+    border-radius:25px;
+    object-fit:cover;
+
+    box-shadow:0 20px 60px rgba(0,0,0,0.2);
+
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+    100%{transform:translateY(0);}
+}
+
+/* TITRE PRINCIPAL */
+h1{
+    font-size:5rem;
+    font-weight:900;
+    color:#1f2937;
+}
+
+/* 🟣 TITRE BULLE SECTIONS */
+h2{
+    display:inline-block;
+    padding:12px 25px;
+    border-radius:50px;
+
+    background:rgba(30,64,175,0.8);
+    color:white;
+
+    margin-bottom:40px;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,280px));
+    justify-content:center;
+    gap:20px;
+}
+
+/* CARDS */
+.card{
+    background:rgba(255,255,255,0.7);
+    padding:25px;
+    border-radius:20px;
+
+    backdrop-filter:blur(10px);
+    transition:0.3s;
+    .card{
+    text-align:center;
+}
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+/* 🔥 TITRES PETITES BULLES (MODIF DEMANDÉE) */
+.card h3{
+    font-weight:900;   /* ✔ GRAS */
+    color:#1e40af;
+    margin-bottom:10px;
+}
+
+/* FORM */
+form{
+    max-width:500px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+input, textarea{
+    padding:15px;
+    border-radius:10px;
+    border:1px solid #ddd;
+}
+
+button{
+    padding:15px;
+    background:#1e40af;
+    color:white;
+    border:none;
+    border-radius:10px;
+}
+
+/* FOOTER */
+footer{
+    padding:40px;
+    text-align:center;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    h1{font-size:3.2rem;}
+    .hero-logo{width:130px;height:130px;}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="home.jpg">
+        AccessHome
+    </div>
+
+    <nav>
+        <a href="#home">Accueil</a>
+        <a href="#about">C’est quoi</a>
+        <a href="#services">Services</a>
+        <a href="#who">Qui sommes-nous</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-card">
+
+        <img src="home.jpg" class="hero-logo">
+
+        <h1>ACCESSHOME</h1>
+
+        <p>ne vous deplacez plus dans l'incertitude.</p>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>C’est quoi AccessHome ?</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>une application</h3>
+            <h4>c'est une application qui permet au personne en situation de handicape d'avoir accer a la carte de sa ville pour pour aller ou elle veut sans la mettre en danger</h4>
+        </div>
+        <div class="card">
+            <h3>access</h3>
+            <h4> elle est accessible pour les personne en fauteille, non voyant ou mal voyant et aussi pour les personne agés</h4>
+        </div>
+        <div class="card">
+            <h3>home</h3>
+            <h4>pour nous se deplacé dans sa propre ville alors que il y a des problème de d'itinairaire,des traveaux c'est pas trop se sentire chez soi. Avec notre aplication les personne en situation de handicape se sentiraient plus chez elle dansleurs avec des adaptation comme notre applicationpar exemple
+            
+            </h4>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Services</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>carte</h3>
+            <h4> Dans notre application, une carte interactive permet aux utilisateurs de visualiser en temps réel les zones où des travaux sont en cours</h4>
+        </div>
+        <div class="card">
+            <h3>traveaux</h3>
+            <h4> Nous mettons régulièrement à jour l’emplacement des travaux dans votre ville afin que vous puissiez vous déplacer où vous voulez, en toute sécurité</h4>
+        </div>
+         <div class="card">
+            <h3>rencontre</h3>
+            <h4> Notre application ne sert pas seulement à informer sur l’état de la ville : elle permet aussi de rencontrer des personnes dans la même situation que vous. Vous pouvez créer des liens, échanger… et peut‑être même vous faire de nouveaux amis</h4>
+        </div>
+         <div class="card">
+            <h3>signalement</h3>
+            <h4>Si vous croisez un obstacle ou des travaux non signalés dans l’application, vous pouvez les déclarer vous‑même pour aider toute la communauté.</h4>
+        </div>
+         <div class="card">
+            <h3>assistant IA</h3>
+            <h4>cette assistant peut vous aidez, surtout les personnes non voyantes, elle prend un photo puis l'envoi a l'ia, elle lui dira par ou passez si la route n'est pas sécurisé pour elle </h4>
+        </div>
+       
+    </div>
+</section>
+
+<!-- WHO -->
+<section id="who">
+    <h2>Qui sommes-nous</h2>
+    <p>Une équipe engagée pour l’accessibilité et que tous le monde se sente *chez soi dans sa ville .</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact</h2>
+
+    <form>
+        <input type="text" placeholder="Nom">
+        <input type="email" placeholder="Email">
+        <textarea placeholder="Message"></textarea>
+        <button>Envoyer</button>
+    </form>
+</section>
+
+<footer>
+    © 2026 AccessHome
+</footer>
+
+</body>
+</html>
